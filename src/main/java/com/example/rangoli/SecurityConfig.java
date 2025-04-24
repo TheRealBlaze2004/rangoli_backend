@@ -21,7 +21,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())// Disable CSRF for APIs
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/register", "/api/login","/api/account","api/products","/api/product/categories").permitAll() // Allow public access to register & login
+                        .requestMatchers("/api/register", "/api/login","/api/account","api/products","/api/product/categories","/addcart","/cart").permitAll() // Allow public access to register & login
                         .anyRequest().authenticated() // Secure other endpoints
                 );
 
