@@ -2,7 +2,7 @@ package com.example.rangoli.Products;
 
 import com.example.rangoli.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
+@Service
 public class CartService {
     @Autowired
     private CartRepository cartRepository;
