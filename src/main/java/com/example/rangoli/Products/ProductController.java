@@ -54,8 +54,8 @@ public class ProductController {
         }
     }
 
-    @GetMapping("/cart")
-    public ResponseEntity<List<CartItemResponse>> getCartItems(@RequestParam int userId) {
+    @GetMapping("/cart/{userID}")
+    public ResponseEntity<List<CartItemResponse>> getCartItems(@PathVariable int userId) {
         List<CartItemResponse> cartItems = cartRepository.getCartItems(userId);
         return ResponseEntity.ok(cartItems);
     }
