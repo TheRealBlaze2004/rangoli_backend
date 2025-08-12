@@ -18,11 +18,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable())// Disable CSRF for APIs
+                .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/register", "/api/login","/api/account","api/products","/api/product/categories","/addcart","/cart").permitAll() // Allow public access to register & login
-                        .anyRequest().authenticated() // Secure other endpoints
+                        .requestMatchers("/api/register", "/api/login","/api/account","api/products","/api/product/categories","/addcart","/cart").permitAll() 
+                        .anyRequest().authenticated()
                 );
 
         return http.build();
